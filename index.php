@@ -46,12 +46,19 @@
                 <hr>
                 <br><br>
 
-                <div class="alert alert-<?php echo $_SESSION['msg_type'] ?> alert-dismissible fade show" role="alert">
-                    <strong><?php echo $_SESSION['massage']; ?></strong>
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
+                <?php 
+
+                    if(isset($_SESSION['massage'])){
+                        echo    "<div class='alert alert-{$_SESSION['msg_type']} alert-dismissible fade show ' role='alert'>
+                                    <strong> {$_SESSION['massage']} </storng>
+                                    <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                                        <span aria-hidden='true'>&times;</span>
+                                    </button>
+                                </div>
+                                ";
+                    }
+
+                ?>
                 <h2>Expenses List</h2>
 
                 <?php 
